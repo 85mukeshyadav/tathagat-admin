@@ -1,0 +1,77 @@
+.main {
+    background-color: #f2f2f2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login {
+    padding: 30px 50px !important;
+    background-color: #fff;
+    border-radius: 20px !important;
+    text-align: center;
+}
+.login h2 {
+    font-weight: 500;
+    font-size: 2.4rem;
+}
+.login h3 {
+    font-weight: 400;
+    color: #626264;
+
+}
+::placeholder{
+    color: #848EA0;
+}
+.formInput {
+    color: #22242E;
+    display: block;
+    min-width: 400px;
+    padding: 10px 4px;
+    margin: 18px auto;
+    border: none;
+    border-bottom: 1px solid #EAEDF0;
+    outline: none;
+    font-size: 1.3rem;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    color: #848EA0;
+    margin: 20px 0;
+}
+input[type='checkbox'] {
+    margin-right: 8px;
+    color: #848EA0;
+}
+.login a{
+    color: rgb(82, 82, 82);
+    text-decoration: none;
+    cursor: pointer;
+}
+.login a:hover {
+    color: rgb(34, 34, 34);
+}
+.login button[type='submit'] {
+    margin-top: 20px;
+}
+.password {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+.password button {
+    font-size: 1.5rem;
+    background: none;
+    color: rgb(82, 82, 82);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 18px;
+}
+.password button:hover {
+    color: #22242E;
+}

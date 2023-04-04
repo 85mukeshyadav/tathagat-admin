@@ -1,0 +1,13 @@
+.main-page {
+  /* margin-top: 65px; */
+  width: 100vw;
+  margin-left: 4vw;
+  min-height: 100vh;
+  background-color: #FCFDFE;
+}
+
+@media (max-width: 768px) {
+  .main-page {
+    display: block;
+  }
+}

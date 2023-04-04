@@ -1,0 +1,335 @@
+.overview {
+    width: 100%;
+    padding: 15px 30px;
+}
+.pageHeading {
+    font-weight: 500;
+}
+.costicon img {
+    width: 100%;
+}
+.costcard {
+    margin: 12px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 18% 75%;
+    justify-content: space-between;
+    align-items: center;
+}
+.costcard h3 {
+    font-weight: 600;
+    color: #22242E;
+    font-size: 1.5rem !important;
+}
+.costcard h3 p:last-child {
+    font-weight: 300;
+}
+.progressBar {
+    position: relative;
+    width: 45%;
+}
+.costLeakageCard {
+    padding: 10px 30px !important;
+    display: grid;
+    grid-template-columns: 11% 60% 25%;
+    align-items: center;
+    justify-content: space-between;
+}
+.costLeakageCard p {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.costLeakageCard img {
+    width: 100%;
+    height: 100%;
+    transform: translateY(14px);
+}
+.leakageMeter {
+    display: flex;
+    align-items: center;
+}
+.leakageMeter div {
+    position: relative;
+    height: 42px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+    overflow: hidden;
+}
+.prevNum, .nextNum {
+    position: absolute !important;
+    font-size: 0.9rem !important;
+    color: rgb(157, 157, 157) !important;
+}
+.nextNum {
+    top: 30px;
+}
+.prevNum {
+    bottom: 30px;
+}
+.cardHeading {
+    color: #22242E !important;
+    font-size: 1.7rem !important;
+    font-weight: 600 !important;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 24px;
+}
+.overallProfit {
+    display: flex;
+    justify-content: space-between;
+}
+.overallProfit h2:first-child, .costSaved h2:first-child {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #22242E;
+
+}
+.overallProfit h2:last-child, .costSaved h2:last-child {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #22242E;
+
+}
+.costSaved {
+    margin-bottom: 40px;
+    background-color: #EAEDF0;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+.line {
+    height: 2px;
+    border-radius: 8px;
+    max-width: 80%;
+    margin: 15px auto;
+    background-color: #EAEDF0;
+}
+.pendingIssues h3 {
+    font-weight: 400;
+    color: #22242E;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+.pendingIssues div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    background-color: #FCFDFE;
+    padding: 6px 8px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.pendingIssues img {
+    height: 90%;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(150%,-50%);
+    transition: all .3s;
+}
+.pendingIssues div:hover {
+    background-color: #EAEDF0;
+}
+.pendingIssues div:hover .issueImage {
+    transform: translate(0%,-50%);
+}
+.notificationGroups {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.notificationGroups button {
+    background-color: #EAEDF0;
+    color: grey;
+    padding: 8px 30px;
+    border-radius: 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.activeGroup {
+    background-color: #22242E !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+}
+.notification {
+    background-color: #FCFDFE;
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+.notificationTime{
+    margin-right: 18px;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.notificationIcon {
+    min-height: 50px;
+    min-width: 50px;
+    background-color: #22242E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 18px;
+}
+.notificationIcon i {
+    color: white;
+    font-size: 1.8rem;
+}
+.notificationContent h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.notificationContent h5 {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.bids h2 {
+    margin: 0;
+    padding: 0;
+    color: #22242E;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.bids h3 {
+    font-size: 1.1rem;
+    color: #22242E;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+.bid {
+    background-color: #EAEDF0;
+    border-radius: 8px;
+    padding: 4px 20px !important;
+    margin-bottom: 10px;
+}
+.bids .bid div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.bids p {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #848EA0;
+
+}
+.leakageBadge {
+    position: absolute;
+    right: -10px;
+    top: 8px;
+    background-color: #D53539;
+    height: 30px;
+    width: 30px;
+    color: white;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leakageLink {
+    color: #22242E;
+}
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+@keyframes text-animation {
+    
+    100% {
+        font-size: 1.2rem
+    }
+}
+.leakageLink div {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: linear-gradient(42deg, #0A60BD, #22242E, #848EA0);
+    color: white;
+    background-size: 300%;
+    animation: bg-animation 4s infinite alternate, text-animation 0.7s ease infinite alternate;
+   
+}
+.modal {
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    width: 40%;
+}
+.modalHeader {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.modalFooter {
+    display: flex;
+    justify-content: space-between;
+}
+.modalBody {
+    margin: 30px 0;
+}
+.modalBody textarea {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    border: 1px solid #EAEDF0;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    padding: 8px 10px;
+    width: 100%;
+    color: #22242E;
+}
+.noNotifications {
+    font-size: 1.2rem;
+    color: #848EA0;
+    margin-top: 25px;
+}
+
+.progressBackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #EAEDF0;
+    opacity: 0.3;
+}
+
+
+
+
+

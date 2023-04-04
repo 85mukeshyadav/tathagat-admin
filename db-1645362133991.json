@@ -1,0 +1,32 @@
+{
+  "subjects": [
+    {
+      "id": 0,
+      "name": "name 1"
+    },
+    {
+      "id": 1,
+      "name": "name 2"
+    },
+    {
+      "id": 2,
+      "name": "name 3"
+    }
+  ],
+  "ques": [
+    {
+      "QuestionText": "Subjectid",
+      "Options": [
+        "SubjectidSubjectid",
+        "Subjectid",
+        "SubjectidSubjectidSubjectid",
+        "SubjectidSubjectidSubjectidSubjectid"
+      ],
+      "QuestionTextPara": null,
+      "Subjectid": "Subject 1",
+      "Paragraph": false,
+      "Type": "Text",
+      "id": 4
+    }
+  ]
+}

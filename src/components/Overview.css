@@ -1,0 +1,343 @@
+.planned-cost h3, .actual-cost h3 {
+  font-weight: normal;
+  font-size: 1.3rem;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+.planned-cost, .actual-cost {
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 1.3em;
+  color: black;
+  padding: 0;
+  margin: 0;
+  /* margin-bottom: 14px; */
+  padding: 10px;
+}
+.planned-cost {
+  border: 2px solid #38A3A5;
+}
+.actual-cost {
+  border: 2px solid #004C6D;
+}
+
+
+.profit-class {
+  color: #14CB00 !important;
+
+}
+.profit-class-total, .loss-class-total {
+  border-radius: 10px;
+  padding: 10px;
+
+}
+.profit-class-total h3, .loss-class-total h3 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.profit-class-total {
+  border: 2px solid #14CB00;
+  background-color: #14CB00;
+}
+.loss-class-total {
+  border: 2px solid #EF0000;
+  background-color: #EF0000;
+}
+.loss-class {
+  color: #EF0000 !important;
+}
+
+.profit {
+  background-color: #EF0000;
+  padding: 10px;
+  margin: 40px;
+  color: #fff;
+  font-weight:  700;
+  border-radius: 4px;
+  justify-content: space-around;
+}
+.Loss {
+  background-color: #14CB00;
+  padding: 10px;
+  margin: 40px;
+  color: #fff;
+  font-weight:  700;
+  border-radius: 4px;
+
+  justify-content: space-around;
+}
+.cost-items div {
+  display: flex;
+  align-items: center;
+}
+.cost-items div i {
+  padding: 0 8px;
+  color: #22577a;
+}
+.cost-items div div {
+  display: block;
+}
+.cost-items :first-child div :nth-child(2) {
+  color: #5eb1b3;
+  font-weight: bold;
+}
+.cost-items :nth-child(2) div :nth-child(2),
+.cost-items :nth-child(3) div :nth-child(2) {
+  color: red;
+  font-weight: bold;
+}
+.project-issues {
+  text-align: center;
+}
+.project-issues p {
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  max-width: 70%;
+  margin: 8px auto;
+  padding: 4px 0;
+}
+.issues {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 8px;
+  
+}
+.abc {
+  display: flex;
+  justify-content: space-between;
+}
+.project-issues {
+  width: 37%;
+}
+.project-cost {
+  width: 60%;
+}
+.progress {
+  display: flex;
+  justify-content: space-around;
+}
+.progress-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.total-tasks {
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(92, 92, 92, 0.733);
+  margin: 0 10px;
+  padding: 8px 50px;
+}
+.progress-status span {
+  font-weight: 600;
+  border: 1px solid rgba(97, 97, 97, 0.705);
+  border-radius: 10px;
+  margin: 0 10px;
+  padding: 8px 12px;
+}
+.ongoing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.progress-status h3 {
+  color: gray;
+  margin-left: 10px;
+}
+.chart span {
+  font-size: 0.8rem;
+  margin: 0 10px;
+  font-weight: 600;
+  color: rgb(82, 82, 82);
+}
+@media (max-width: 768px) {
+  .refresh-btn {
+    padding: 8px 22px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 30px;
+    box-shadow: 0px 2px 6px 1px grey;
+    max-width: fit-content;
+    
+  }
+  .refresh-btn:hover {
+    background-color: #114399;
+  }
+ 
+  .cards {
+    max-width: 100%;
+  }
+  .abc {
+    display: block;
+  }
+  .project-issues {
+    width: 100%;
+  }
+  .project-cost {
+    width: 100%;
+  }
+
+  .cost-items {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+  }
+  .cost-items div {
+    display: block;
+    margin: 5px 0;
+  }
+  .progress {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ongoing {
+    display: block;
+  }
+  .ongoing span {
+    margin: 10px;
+  }
+  .total-tasks {
+    padding: 8px 10%;
+  }
+  .chart {
+    margin-bottom: 25px;
+  }
+}
+
+.refresh-btn {
+  padding: 0;
+  margin: 0;
+  background:none;
+  
+}
+.refresh-btn:hover {
+  background-color: #114399;
+}
+
+/* tutotial styles ------ */
+
+/* welcome message realted styles: */
+.welcomemsg {
+  min-width: 60vw !important;
+  /* padding: 20px 10px; */
+  background-color:#292C31 !important;
+  color: white;
+  border-radius: 20px !important;
+}
+.welcomemsg h1 {
+  font-size: 2.9rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  /* font-style: italic; */
+}
+.welcomemsg p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.welcomemsg span {
+  font-style: italic;
+  opacity: 0.4;
+}
+
+/* common styles for all tootltips: */
+.introjs-relativePosition{
+  position: static !important;
+}
+.introjs-tooltiptext {
+  padding: 0px 20px !important;
+}
+
+.introjs-tooltip-header {
+  /* display: none; */
+  padding: 0 !important;
+}
+.introjs-skipbutton {
+  color: #9f9f9f5b !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  /* display: none !important; */
+  
+}
+.introjs-button {
+  background-color: rgb(26, 81, 141) !important;
+  border: none !important;
+  outline: none !important;
+  text-shadow: none !important;
+  color: white !important;
+  padding: 8px 24px !important;
+  border-radius: 16px !important ;
+}
+.introjs-disabled {
+  background-color: rgb(201, 201, 201) !important;
+}
+.introjs-prevbutton {
+  background-color: rgb(80, 80, 80) !important;
+}
+.introjs-progress {
+  height: 4px !important;
+}
+.introjs-progressbar {
+}
+.introjs-tooltipbuttons {
+  border: none !important;
+}
+.introjs-arrow.left-bottom {
+  border-right-color: rgba(0, 0, 0, 0.836) !important;
+}
+.introjs-arrow.top {
+  border-bottom-color: rgba(0, 0, 0, 0.836) !important;
+}
+.introjs-arrow.right-bottom {
+  border-left-color: rgba(0, 0, 0, 0.836) !important;
+}
+.introjs-arrow.bottom {
+  border-top-color: rgba(0, 0, 0, 0.836) !important;
+}
+.introjs-arrow.left {
+  border-right-color: rgba(0, 0, 0, 0.836) !important;
+}
+.introjs-arrow.top-middle {
+  border-bottom-color: rgba(0, 0, 0, 0.836) !important;
+}
+.introjs-arrow.right {
+  border-left-color: rgba(0, 0, 0, 0.836) !important;
+}
+
+
+
+/* tooltip related styles: */
+.tooltip {
+  background-color: rgba(0, 0, 0, 0.918) !important;
+  color: white !important;
+  min-width: 500px !important;
+}
+.tooltip h1 {
+  font-size: 1.7rem;
+  font-weight: 500 !important;
+  margin-bottom: 10px;
+}
+.tooltip p {
+  font-style: italic;
+  font-size: 1rem;
+  color: rgb(143, 143, 143);
+}
+.Dropdown-option.is-selected {
+  background-color: #0A60BD !important;
+  color: white !important;
+}
+
+
+
+
+
+
+
