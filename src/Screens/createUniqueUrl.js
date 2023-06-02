@@ -1,7 +1,8 @@
 import { IconCopy } from "@tabler/icons-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "react-dropdown/style.css";
+import Select from "react-select";
+import { toast } from "react-toastify";
 
 const CreateUniqueUrl = (params) => {
 	const [students, setStudents] = useState([]);
@@ -76,6 +77,13 @@ const CreateUniqueUrl = (params) => {
 	};
 
 	const generateUniqueUrl = () => {
+		if (!selectedStudent || !selectedPackage || !selectedTest) {
+			toast.error("Please select all fields", {
+				position: "bottom-center",
+				autoClose: 1000,
+			});
+			return;
+		}
 		const host = process.env.REACT_APP_CLIENT_HOST;
 		const pkgid = encrypt(selectedPackage);
 		const testid = encrypt(selectedTest);
@@ -97,58 +105,53 @@ const CreateUniqueUrl = (params) => {
 			>
 				Select Student
 			</label>
-			<select
+			<Select
+				placeholder="Select Student"
+				options={students.map((student) => ({
+					value: student.email_Id,
+					label: student.username,
+				}))}
 				onChange={(e) => {
-					console.log(e.target.value);
-					setSelectedStudent(e.target.value);
-					getPackagesForStudent(e.target.value);
+					console.log(e.value);
+					setSelectedStudent(e.value);
+					getPackagesForStudent(e.value);
 				}}
-				className="block appearance-none w-full bg-gray-200 mb-2 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-			>
-				<option value="">Select Student</option>
-				{students.map((student) => (
-					<option value={student.email_Id}>{student.username}</option>
-				))}
-			</select>
+			/>
 			<label
 				className="block uppercase tracking-wide mt-2 text-gray-700 text-sm font-bold mb-2"
 				htmlFor="grid-state"
 			>
 				Select Package
 			</label>
-			<select
-				id="package"
+			<Select
+				placeholder="Select Package"
+				options={packages.map((pac) => ({
+					value: pac.packageId,
+					label: pac.PackageName,
+				}))}
 				onChange={(e) => {
-					console.log(e.target.value);
-					setSelectedPackage(e.target.value);
-					getTestForPackage(e.target.value);
+					console.log(e.value);
+					setSelectedPackage(e.value);
+					getTestForPackage(e.value);
 				}}
-				className="block appearance-none w-full bg-gray-200 mb-2 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-			>
-				<option value="">Select Package</option>
-				{packages.map((pac) => (
-					<option value={pac.packageId}>{pac.PackageName}</option>
-				))}
-			</select>
+			/>
 			<label
 				className="block uppercase tracking-wide mt-2 text-gray-700 text-sm font-bold mb-2"
 				htmlFor="grid-state"
 			>
 				Select Test
 			</label>
-			<select
-				id="test"
+			<Select
+				placeholder="Select Test"
+				options={tests.map((test) => ({
+					value: test.Test_Id,
+					label: test.TestTitle,
+				}))}
 				onChange={(e) => {
-					console.log(e.target.value);
-					setSelectedTest(e.target.value);
+					console.log(e.value);
+					setSelectedTest(e.value);
 				}}
-				className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-			>
-				<option value="">Select Test</option>
-				{tests.map((test) => (
-					<option value={test.Test_Id}>{test.TestTitle}</option>
-				))}
-			</select>
+			/>
 			<div>
 				<button
 					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
