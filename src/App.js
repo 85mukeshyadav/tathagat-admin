@@ -1,31 +1,31 @@
-import React, { useEffect } from "react";
-import Overview from "./components/Overview";
-import Navbar from "./components/Navbar";
-import { useState } from "react";
-import "./App.css";
-import SignIn from "./components/Auth/Signin";
-import AllprojectsContext from "./context/AllprojectsContext";
-import SelectedProjectContext from "./context/selectdProjectContext";
-import updatesContext from "./context/UpdatesContext";
-import CountContext from "./context/CountContext";
 import axios from "axios";
-import { Redirect, Route, Switch, withRouter } from "react-router";
-import NotFound from "./components/NotFound";
-import Settings from "./components/Settings";
+import React, { useEffect, useState } from "react";
+import { Redirect, Route, Switch } from "react-router";
 import { useLocation } from "react-router-dom";
-import Admin from "./Screens/addquestion";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import "./App.css";
+import Createpackage from "./Screens/Createpackage";
+import AddChapter from "./Screens/addChapter";
 import AddCourse from "./Screens/addCourse";
 import AddSubject from "./Screens/addSubject";
-import CreateTest from "./Screens/createTest";
-
-import AddChapter from "./Screens/addChapter";
 import AddTopic from "./Screens/addTopic";
-import CourseListContext from "./context/AllprojectsContext";
-import Createpackage from "./Screens/Createpackage";
-import AddVideos from "./Screens/addVideo";
 import AddUsers from "./Screens/addUsers";
+import AddVideos from "./Screens/addVideo";
+import Admin from "./Screens/addquestion";
 import AddBlog from "./Screens/blog";
+import CreateTest from "./Screens/createTest";
 import CreateUniqueUrl from "./Screens/createUniqueUrl";
+import SignIn from "./components/Auth/Signin";
+import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
+import Overview from "./components/Overview";
+import Settings from "./components/Settings";
+import CourseListContext from "./context/AllprojectsContext";
+import CountContext from "./context/CountContext";
+import updatesContext from "./context/UpdatesContext";
+import SelectedProjectContext from "./context/selectdProjectContext";
 
 function App() {
 	let [updates, setUpdates] = useState([]);
@@ -228,6 +228,7 @@ function App() {
 					</CourseListContext.Provider>
 				</updatesContext.Provider>
 			</CountContext.Provider>
+			<ToastContainer />
 			<div className={isLoader ? "" : "loaderDisplay"} id="loader"></div>
 		</React.Fragment>
 	);
