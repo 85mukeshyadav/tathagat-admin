@@ -1,9 +1,3 @@
-import React, { useContext, useEffect, useState } from "react";
-import AllprojectsContext from "../context/AllprojectsContext";
-import SelectedProjectContext from "../context/selectdProjectContext";
-import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBox,
 	faHome,
@@ -15,6 +9,12 @@ import {
 	faUserAlt,
 	faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AllprojectsContext from "../context/AllprojectsContext";
+import SelectedProjectContext from "../context/selectdProjectContext";
+import styles from "./Navbar.module.css";
 
 function Navbar(props) {
 	const [user, setuser] = useState({});
@@ -27,7 +27,7 @@ function Navbar(props) {
 
 	function _setuser() {
 		let res = localStorage.getItem("user");
-		res = JSON.parse(res);
+		res = JSON.parse(res || "{}");
 		setuser(res);
 	}
 	function _Logout() {
