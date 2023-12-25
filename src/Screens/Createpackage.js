@@ -1,14 +1,14 @@
 //import liraries
+import { Checkbox } from "@mantine/core";
 import axios from "axios";
-import React, { Component, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactDragListView from "react-drag-listview";
-import { toast, ToastContainer } from "react-toastify";
-import ReactTooltip from "react-tooltip";
+import Modal from "react-modal";
+import ReactQuill from "react-quill";
+import { ToastContainer, toast } from "react-toastify";
 import { ToastInfo, ToastUpdate, uploadToCloud } from "../api/Client";
 import CourseListContext from "../context/AllprojectsContext";
 import dragicon from "../resources/drag.svg";
-import Modal from "react-modal";
-import ReactQuill from "react-quill";
 
 const customStyles = {
 	content: {
@@ -63,6 +63,7 @@ const Createpackage = (params) => {
 		studentList: [],
 	});
 	const [searchTerm, setSearchTerm] = React.useState("");
+	const [isReferralRequired, setIsReferralRequired] = useState(false);
 
 	const selectedStudentList = {
 		packageid: "",
@@ -107,6 +108,7 @@ const Createpackage = (params) => {
 			FreeCourseVideo: FreeCourseVideo,
 			TestList: testId,
 			thumbnail: Packagethumb,
+			isReferralRequired: isReferralRequired,
 		};
 		if (getEditMode) {
 			dataObj["packageId"] = getEditModePacDetail.packageId;
@@ -1265,6 +1267,8 @@ const Createpackage = (params) => {
 					</div>
 				</ol>
 			</ReactDragListView>
+
+			<Checkbox label="Referral Mandatory" className="mb-6 font-bold text-gray-700" onChange={(e) => setIsReferralRequired(e.target.checked)} mb="lg" />
 
 			<div className="flex items-center justify-between">
 				<button

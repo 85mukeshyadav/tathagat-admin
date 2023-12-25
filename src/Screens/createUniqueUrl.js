@@ -21,54 +21,76 @@ const CreateUniqueUrl = (params) => {
 		},
 	};
 
-	const getAllStudents = async () => {
+	// const getAllStudents = async () => {
+	// 	params.setLoader(true);
+	// 	const res = await axios.get(
+	// 		process.env.REACT_APP_API + "/alluser?userType=student",
+	// 		options
+	// 	);
+	// 	if (res.status === 200) {
+	// 		console.log(res.data);
+	// 		setStudents(res.data);
+	// 	} else {
+	// 		console.log(res.data);
+	// 	}
+	// 	params.setLoader(false);
+	// };
+
+	const getAllPackages = async () => {
+		const url = process.env.REACT_APP_API + "/getallpackages";
 		params.setLoader(true);
-		const res = await axios.get(
-			process.env.REACT_APP_API + "/alluser?userType=student",
-			options
-		);
+		const res = await axios.get(url, options);
+		console.log(res.data);
 		if (res.status === 200) {
-			console.log(res.data);
-			setStudents(res.data);
-		} else {
-			console.log(res.data);
+			setPackages(res.data);
 		}
 		params.setLoader(false);
 	};
 
-	const getPackagesForStudent = async (userId) => {
+	const getAllTests = async (packageId) => {
+		const url = process.env.REACT_APP_API + `/getPackageDetails/${packageId}`;
 		params.setLoader(true);
-		const res = await axios.post(
-			process.env.REACT_APP_API + "/mypackages",
-			{
-				userId,
-			},
-			options
-		);
+		const res = await axios.get(url, options);
+		console.log(res.data);
 		if (res.status === 200) {
-			console.log(res.data);
-			setPackages(res.data.data);
-		} else {
-			console.log(res.data);
+			setTests(res.data?.testDetails);
 		}
 		params.setLoader(false);
 	};
 
-	const getTestForPackage = async (packageId) => {
-		params.setLoader(true);
-		const res = await axios.get(
-			process.env.REACT_APP_API +
-				`/getPackageDetails/${packageId}?userId=${selectedStudent}`,
-			options
-		);
-		if (res.status === 200) {
-			console.log(res.data);
-			setTests(res.data.testDetails);
-		} else {
-			console.log(res.data);
-		}
-		params.setLoader(false);
-	};
+	// const getPackagesForStudent = async (userId) => {
+	// 	params.setLoader(true);
+	// 	const res = await axios.post(
+	// 		process.env.REACT_APP_API + "/mypackages",
+	// 		{
+	// 			userId,
+	// 		},
+	// 		options
+	// 	);
+	// 	if (res.status === 200) {
+	// 		console.log(res.data);
+	// 		setPackages(res.data.data);
+	// 	} else {
+	// 		console.log(res.data);
+	// 	}
+	// 	params.setLoader(false);
+	// };
+
+	// const getTestForPackage = async (packageId) => {
+	// 	params.setLoader(true);
+	// 	const res = await axios.get(
+	// 		process.env.REACT_APP_API +
+	// 			`/getPackageDetails/${packageId}?userId=${selectedStudent}`,
+	// 		options
+	// 	);
+	// 	if (res.status === 200) {
+	// 		console.log(res.data);
+	// 		setTests(res.data.testDetails);
+	// 	} else {
+	// 		console.log(res.data);
+	// 	}
+	// 	params.setLoader(false);
+	// };
 
 	const encrypt = (str) => {
 		let bufferObj = Buffer.from(str, "utf8");
@@ -77,7 +99,7 @@ const CreateUniqueUrl = (params) => {
 	};
 
 	const generateUniqueUrl = () => {
-		if (!selectedStudent || !selectedPackage || !selectedTest) {
+		if (!selectedPackage || !selectedTest) {
 			toast.error("Please select all fields", {
 				position: "bottom-center",
 				autoClose: 1000,
@@ -87,19 +109,21 @@ const CreateUniqueUrl = (params) => {
 		const host = process.env.REACT_APP_CLIENT_HOST;
 		const pkgid = encrypt(selectedPackage);
 		const testid = encrypt(selectedTest);
-		const userid = encrypt(selectedStudent);
-		const url = `${host}/test/${pkgid}/${testid}/${userid}`;
+		// const userid = encrypt(selectedStudent);
+		// const url = `${host}/test/${pkgid}/${testid}/${userid}`;
+		const url = `${host}/test/${pkgid}/${testid}`;
 		setUniqueUrl(url);
 		console.log(url);
 	};
 
 	useEffect(() => {
-		getAllStudents();
+		// getAllStudents();
+		getAllPackages();
 	}, []);
 
 	return (
 		<div className="flex flex-col px-4 py-4">
-			<label
+			{/* <label
 				className="block uppercase tracking-wide mt-2 text-gray-700 text-sm font-bold mb-2"
 				htmlFor="grid-state"
 			>
@@ -116,7 +140,7 @@ const CreateUniqueUrl = (params) => {
 					setSelectedStudent(e.value);
 					getPackagesForStudent(e.value);
 				}}
-			/>
+			/> */}
 			<label
 				className="block uppercase tracking-wide mt-2 text-gray-700 text-sm font-bold mb-2"
 				htmlFor="grid-state"
@@ -127,12 +151,13 @@ const CreateUniqueUrl = (params) => {
 				placeholder="Select Package"
 				options={packages.map((pac) => ({
 					value: pac.packageId,
-					label: pac.PackageName,
+					label: pac.name,
 				}))}
 				onChange={(e) => {
 					console.log(e.value);
 					setSelectedPackage(e.value);
-					getTestForPackage(e.value);
+					// getTestForPackage(e.value);
+					getAllTests(e.value);
 				}}
 			/>
 			<label

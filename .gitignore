@@ -36,5 +36,7 @@ build/static/media/Plus.ad16ef89.svg
 build/static/media/plusicon.22735458.svg
 build/static/media/reports_dark.285af3a8.svg
 build/static/media/tasks.2182e2e7.svg
+build/
+*.zip
 package-lock.json
 .env
