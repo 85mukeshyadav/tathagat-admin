@@ -1,19 +1,21 @@
 //import liraries
 import axios from 'axios';
 import moment from 'moment';
-import React, { Component, useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { addStyles } from 'react-mathquill';
 import { ToastContainer } from 'react-toastify';
 import { ToastInfo, ToastUpdate, uploadToCloud } from '../api/Client';
 import CourseListContext from '../context/AllprojectsContext';
-import { addStyles, EditableMathField, StaticMathField } from 'react-mathquill'
 
-import ReactQuill, { Quill } from "react-quill";
 import katex from "katex";
 import "katex/dist/katex.min.css";
 import mathquill4quill from 'mathquill4quill';
 import "mathquill4quill/mathquill4quill.css";
+import ImageCompress from 'quill-image-compress';
+import ReactQuill, { Quill } from "react-quill";
 window.katex = katex;
 
+Quill.register('modules/imageCompress', ImageCompress);
 
 
 // create a component
@@ -280,6 +282,11 @@ const Admin = (params) => {
             [ "image", "formula" ],
             [ "clean" ] // remove formatting button
         ],
+        imageCompress: {
+            quality: 0.7, // default
+            maxWidth: 1024, // default
+            maxHeight: 1024, // default
+        },
         clipboard: {
             // toggle to add extra line breaks when pasting HTML:
             matchVisual: false
