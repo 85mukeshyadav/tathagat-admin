@@ -5,9 +5,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import CourseListContext from "../context/AllprojectsContext";
 // import dragicon from "../resources/drag.svg";
-import ReactQuill from "react-quill";
+import ImageCompress from 'quill-image-compress';
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 // create a component
+
+Quill.register('modules/imageCompress', ImageCompress);
 
 var selectedQuestionList = [];
 const CreateTest = (params) => {
@@ -552,6 +555,11 @@ const CreateTest = (params) => {
 							[{ script: "sub" }, { script: "super" }],
 							["formula", true],
 						],
+						imageCompress: {
+							quality: 0.7, // default
+							maxWidth: 1024, // default
+							maxHeight: 1024, // default
+						}
 					}}
 					formats={{
 						toolbar: [
