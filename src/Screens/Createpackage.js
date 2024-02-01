@@ -838,7 +838,7 @@ const Createpackage = (params) => {
 				<div className="relative">
 					<select
 						onChange={onSelectCourse}
-						value={getEditModePacDetail.courseId}
+						value={courseId || getEditModePacDetail.courseId}
 						// disabled={getEditMode}
 						className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 					>
