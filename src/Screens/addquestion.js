@@ -148,7 +148,7 @@ const Admin = (params) => {
         params.setLoader(true);
         const res = await axios.post(process.env.REACT_APP_API + '/questionupload', data, options)
         // console.log("🚀 ~ file: addquestion.js ~ line 52 ~ _SubmitQuestion ~ res", res.data)
-        _getQues()
+        // _getQues()
         if (res.status == 200) {
             ToastUpdate(toastid, 'Questions addedd successfully');
             window.location.reload(false);
@@ -197,9 +197,9 @@ const Admin = (params) => {
 
 
 
-    useEffect(async () => {
-        _getQues();
-    }, [])
+    // useEffect(async () => {
+    //     _getQues();
+    // }, [])
 
     const _AddMore = () => {
         let obj = {
@@ -754,7 +754,7 @@ const Admin = (params) => {
                 }
             </div>
 
-            <div>
+            {/* <div>
 
                 <div className="mx-auto">
                     <div className="py-8">
@@ -783,11 +783,6 @@ const Admin = (params) => {
                                             >
                                                 paragraph
                                             </th>
-                                            {/* <th
-                                                className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
-                                            >
-                                                Question Description
-                                            </th> */}
                                             <th
                                                 className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
                                             >
@@ -804,7 +799,6 @@ const Admin = (params) => {
                                                 <tr key={ i }>
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                         <p className="text-gray-900 whitespace-no-wrap">
-                                                            {/* { res.Subjectid } */ }
                                                         </p>
                                                         <p className="text-gray-600 whitespace-no-wrap">{ i + 1 }</p>
                                                     </td>
@@ -819,9 +813,6 @@ const Admin = (params) => {
                                                         <p dangerouslySetInnerHTML={ { __html: res.paragraph } } className="text-gray-900 whitespace-no-wrap"></p>
                                                         <p dangerouslySetInnerHTML={ { __html: res.questionDesc } } className="text-gray-600 whitespace-no-wrap"></p>
                                                     </td>
-                                                    {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                        <p dangerouslySetInnerHTML={ { __html: res.questionDesc } } className="text-gray-600 whitespace-no-wrap"></p>
-                                                    </td> */}
                                                     <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                         <span
                                                             className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
@@ -833,23 +824,6 @@ const Admin = (params) => {
                                                             <span className="relative">{ res.questionLevel }</span>
                                                         </span>
                                                     </td>
-                                                    {/* <td
-                                                        className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
-                                                    >
-                                                        <button
-                                                            type="button"
-                                                            className="inline-block text-gray-500 hover:text-gray-700"
-                                                        >
-                                                            <svg
-                                                                className="inline-block h-6 w-6 fill-current"
-                                                                viewBox="0 0 24 24"
-                                                            >
-                                                                <path
-                                                                    d="M12 6a2 2 0 110-4 2 2 0 010 4zm0 8a2 2 0 110-4 2 2 0 010 4zm-2 6a2 2 0 104 0 2 2 0 00-4 0z"
-                                                                />
-                                                            </svg>
-                                                        </button>
-                                                    </td> */}
                                                 </tr>
                                             )) }
 
@@ -859,7 +833,7 @@ const Admin = (params) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
         </div >
 
